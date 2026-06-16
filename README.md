@@ -1,15 +1,52 @@
-# url-shortener
+# URL Shortener
 
-To install dependencies:
+## Purpose
+
+This system shortens and store aliases for 5 years
+
+## Main Features
+
+## Tech Stack
+
+- Backend:
+  - Bun websocket
+- Database:
+  - Postgresql
+  <!-- - Infra: ... -->
+
+## Getting Started
+
+1. Install dependencies:
 
 ```bash
 bun install
 ```
 
-To run:
+2. Run the local infra
 
 ```bash
-bun run index.ts
+    docker compose up -d
 ```
 
-This project was created using `bun init` in bun v1.3.14. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+3. Run the app with
+
+```bash
+bun run dev
+```
+
+## Environment Variables
+
+```env
+DATABASE_URL=<postgres_urlk>
+PORT=3000
+```
+
+## Common Commands
+
+- install
+- dev
+- test
+- build
+- deploy
+
+<!-- ## Project Structure -->
