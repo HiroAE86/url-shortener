@@ -1,4 +1,5 @@
 import { Logger } from "../../configs/logger";
+import { rerouteFromShortUrl } from "./rerouter.service";
 
 const logger = new Logger({ endpoint: "/v1/rerouter" });
 
@@ -12,7 +13,7 @@ export const rerouterController = {
         if (!urlHash) {
           return Response.json({ message: "Missing urlHash" }, { status: 400 });
         }
-        return Response.json({ message: "endpoint in development" });
+        return rerouteFromShortUrl({ urlHash });
       } catch (error) {
         return Response.json(
           { message: "Error occurred while processing request" },
