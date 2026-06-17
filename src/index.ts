@@ -1,4 +1,5 @@
 import { Logger } from "../configs/logger";
+import { rerouterController } from "./rerouter/rerouter.controller";
 import { shortenerController } from "./shortener/shortener.controller";
 
 const logger = new Logger({ endpoint: "/health" });
@@ -10,6 +11,7 @@ const server = Bun.serve({
   development: true,
   routes: {
     ...shortenerController,
+    ...rerouterController,
     "/health": {
       GET: () => {
         logger.info({ message: "health ckeck" });
@@ -21,6 +23,7 @@ const server = Bun.serve({
     "/*": () =>
       Response.json({ message: "Not Found", status: 404 }, { status: 404 }),
   },
+
   error(error) {
     return new Response(`<pre>${error}\n${error.stack}</pre>`, {
       headers: {
