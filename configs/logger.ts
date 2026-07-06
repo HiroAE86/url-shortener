@@ -15,7 +15,7 @@ export class Logger {
   }
 
   info({ message }: LoggerMessageProps): void {
-    console.log(chalk.red.blueBright("[INFO]: "), chalk.bgWhite.black(message));
+    console.log(chalk.bgBlue.underline("[INFO]: ", message));
   }
 
   debug({ message }: LoggerMessageProps): void {}
