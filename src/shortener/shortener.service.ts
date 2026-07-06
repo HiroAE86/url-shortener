@@ -9,6 +9,6 @@ export const createShortenedUrl = async ({ url }: { url: string }) => {
 
   return Response.json({
     message: "Success",
-    shortUrl: `http://localhost:4000/${urlHash}`,
+    shortUrl: `http://localhost:4000/v1/${urlHash}`,
   });
 };
